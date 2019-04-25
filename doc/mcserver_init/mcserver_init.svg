@@ -1,0 +1,244 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 801 580" xmlns:xlink="http://www.w3.org/1999/xlink" width="801" height="580">
+    <style type="text/css"><![CDATA[
+.st1 {fill:#000000;font-family:Arial;font-size:10pt;font-weight:bold}
+.st2 {fill:#000000;font-family:Arial;font-size:9pt;font-weight:bold}
+.st3 {fill:#000000;font-family:宋体;font-size:10pt;font-weight:bold}
+]]></style>
+    <defs/>
+    <g transform="translate(-30.65,-29.3)">
+        <g transform="translate(35.43,30.3)">
+            <path id="shape1" fill="#41c3fa" stroke="#41c3fa" d="M24.5,49L96.5,49C110,49,120.9,38,120.9,24.5C120.9,11,110,0,96.5,0L24.5,0C11,0,0,11,0,24.5C0,38,11,49,24.5,49z"/>
+            <text class="st1">
+                <tspan y="28.5" x="44.5">main</tspan>
+            </text>
+        </g>
+        <g transform="translate(48.66,114.35)">
+            <path id="shape2" fill="#41c3fa" stroke="#41c3fa" d="M94.5,56.3L94.5,0L0,0L0,56.3L94.5,56.3z"/>
+            <text class="st2">
+                <tspan y="25.1" x="15.2">日志初始化</tspan>
+                <tspan y="40.1" x="21.2">openlog()</tspan>
+            </text>
+        </g>
+        <g transform="translate(48.66,204.44)">
+            <path id="shape3" fill="#41c3fa" stroke="#41c3fa" d="M94.5,56.3L94.5,0L0,0L0,56.3L94.5,56.3z"/>
+            <text class="st2">
+                <tspan y="32.6" x="8.2">创建守护进程</tspan>
+            </text>
+        </g>
+        <g transform="translate(31.65,284.35)">
+            <path id="shape4" fill="#fdb314" stroke="#fdb314" d="M64.3,76.6L128.5,38.3L64.3,0L0,38.3L64.3,76.6z"/>
+            <text class="st1">
+                <tspan y="42.3" x="34.3">pid=fork()</tspan>
+            </text>
+        </g>
+        <g transform="translate(95.91,170.64)" id="shape5">
+            <path fill="none" stroke="#064e66" d="M0,0L0,23.4"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#064e66" stroke="#064e66" d="M0,33.8L2.6,23.4L-2.6,23.4L0,33.8"/>
+        </g>
+        <g transform="translate(95.91,79.27)" id="shape6">
+            <path fill="none" stroke="#064e66" d="M0,0L0,24.7"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#064e66" stroke="#064e66" d="M0,35.1L2.6,24.7L-2.6,24.7L0,35.1"/>
+        </g>
+        <g transform="translate(95.91,260.73)" id="shape7">
+            <path fill="none" stroke="#064e66" d="M0,0L0,13.2"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#064e66" stroke="#064e66" d="M0,23.6L2.6,13.2L-2.6,13.2L0,23.6"/>
+        </g>
+        <g transform="translate(160.16,322.63)" id="shape8">
+            <path fill="none" stroke="#064e66" d="M0,0L36.8,0L36.8,-264.2L58.4,-264.2"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#064e66" stroke="#064e66" d="M68.8,-264.2L58.4,-266.8L58.4,-261.6L68.8,-264.2"/>
+            <text class="st2">
+                <tspan y="2.4" x="1">pid==0</tspan>
+            </text>
+        </g>
+        <g transform="translate(276.24,86.6)" id="shape9">
+            <path fill="none" stroke="#064e66" d="M0,0L0,17.4"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#064e66" stroke="#064e66" d="M0,27.8L2.6,17.4L-2.6,17.4L0,27.8"/>
+        </g>
+        <g transform="translate(48.66,388.48)">
+            <path id="shape10" fill="#41c3fa" stroke="#41c3fa" d="M94.5,56.3L94.5,0L0,0L0,56.3L94.5,56.3z"/>
+            <text class="st2">
+                <tspan y="15.6" x="8.2">父进程等待子</tspan>
+                <tspan y="32.6" x="15.2">进程返回信</tspan>
+                <tspan y="49.6" x="11.2">号，30s超时</tspan>
+            </text>
+        </g>
+        <g transform="translate(228.99,30.3)">
+            <path id="shape11" fill="#41c3fa" stroke="#41c3fa" d="M94.5,56.3L94.5,0L0,0L0,56.3L94.5,56.3z"/>
+            <text class="st2">
+                <tspan y="23.1" x="14.2">system_init</tspan>
+                <tspan y="40.1" x="15.2">系统初始化</tspan>
+            </text>
+        </g>
+        <g transform="translate(35.43,466.88)">
+            <path id="shape12" fill="#41c3fa" stroke="#41c3fa" d="M24.5,49L96.5,49C110,49,120.9,38,120.9,24.5C120.9,11,110,0,96.5,0L24.5,0C11,0,0,11,0,24.5C0,38,11,49,24.5,49z"/>
+            <text class="st1">
+                <tspan y="28.5" x="44.5">exit()</tspan>
+            </text>
+        </g>
+        <g transform="translate(95.91,444.77)" id="shape13">
+            <path fill="none" stroke="#064e66" d="M0,0L-0,11.7"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#064e66" stroke="#064e66" d="M-0,22.1L2.6,11.7L-2.6,11.7L-0,22.1"/>
+        </g>
+        <g transform="translate(228.99,114.35)">
+            <path id="shape14" fill="#41c3fa" stroke="#41c3fa" d="M94.5,56.3L94.5,0L0,0L0,56.3L94.5,56.3z"/>
+            <text class="st2">
+                <tspan y="24.1" x="8.2">处理命令行参</tspan>
+                <tspan y="41.1" x="41.2">数</tspan>
+            </text>
+        </g>
+        <g transform="translate(500.1,105.13)">
+            <path id="shape15" fill="#fdb314" stroke="#fdb314" d="M64.3,76.6L128.5,38.3L64.3,0L0,38.3L64.3,76.6z"/>
+            <text class="st1">
+                <tspan y="42.3" x="50.3">argv</tspan>
+            </text>
+        </g>
+        <g transform="translate(665.11,31.22)">
+            <path id="shape16" fill="#41c3fa" stroke="#41c3fa" d="M165.9,53.8L165.9,0L0,0L0,53.8L165.9,53.8z"/>
+            <text class="st2">
+                <tspan y="30.4" x="8.4">lib_inverse_dynamic_init()</tspan>
+            </text>
+        </g>
+        <g transform="translate(628.61,143.41)" id="shape17">
+            <path fill="none" stroke="#064e66" d="M0,0L20.5,0L26.1,.2"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#064e66" stroke="#064e66" d="M36.5,.7L26.2,-2.4L26,2.8L36.5,.7"/>
+            <text class="st2">
+                <tspan y="3.5" x="12.8">-o</tspan>
+            </text>
+        </g>
+        <g transform="translate(564.35,105.13)" id="shape18">
+            <path fill="none" stroke="#064e66" d="M0,0L0,-47L90.4,-47"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#064e66" stroke="#064e66" d="M100.8,-47L90.4,-49.6L90.4,-44.4L100.8,-47"/>
+            <text class="st2">
+                <tspan y="-43.5" x="23.4">-i</tspan>
+            </text>
+        </g>
+        <g transform="translate(665.11,110.21)">
+            <path id="shape19" fill="#41c3fa" stroke="#41c3fa" d="M161.2,67.7L161.2,0L0,0L0,67.7L161.2,67.7z"/>
+            <text class="st2">
+                <tspan y="12.9" x="31.1">axis_output_init()</tspan>
+                <tspan y="27.9" x="22.1">initServoDriveMode()</tspan>
+                <tspan y="44.9" x="33.1">初始化outputdev</tspan>
+                <tspan y="61.9" x="36.1">初始化ctrlmode</tspan>
+            </text>
+        </g>
+        <g transform="translate(276.24,170.64)" id="shape20">
+            <path fill="none" stroke="#236ea1" d="M0,0L0,29.4"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#236ea1" stroke="#236ea1" d="M0,33.8L3,28.6C2.1,29.1,1.1,29.4,0,29.4C-1.1,29.4,-2.1,29.1,-3,28.6L0,33.8"/>
+        </g>
+        <g transform="translate(228.99,204.44)">
+            <path id="shape21" fill="#41c3fa" stroke="#41c3fa" d="M94.5,56.3L94.5,0L0,0L0,56.3L94.5,56.3z"/>
+            <text class="st2">
+                <tspan y="24.1" x="15.2">创建socket </tspan>
+                <tspan y="41.1" x="29.2">server</tspan>
+            </text>
+        </g>
+        <g transform="translate(276.24,260.73)" id="shape22">
+            <path fill="none" stroke="#236ea1" d="M0,0L0,24.2"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#236ea1" stroke="#236ea1" d="M0,28.6L3,23.4C2.1,23.9,1.1,24.2,0,24.2C-1.1,24.2,-2.1,23.9,-3,23.4L0,28.6"/>
+        </g>
+        <g transform="translate(228.99,289.35)">
+            <path id="shape23" fill="#41c3fa" stroke="#41c3fa" d="M94.5,56.3L94.5,0L0,0L0,56.3L94.5,56.3z"/>
+            <text class="st2">
+                <tspan y="15.6" x="10.2">依据frontend</tspan>
+                <tspan y="32.6" x="8.2">以前台或后台</tspan>
+                <tspan y="49.6" x="21.2">程序运行</tspan>
+            </text>
+        </g>
+        <g transform="translate(564.35,181.69)" id="shape24">
+            <path fill="none" stroke="#236ea1" d="M0,0L0,52.2L96.4,52.2"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#236ea1" stroke="#236ea1" d="M100.8,52.2L95.6,49.2C96.1,50,96.4,51.1,96.4,52.2C96.4,53.3,96.1,54.3,95.6,55.2L100.8,52.2"/>
+            <rect y="44.7" x="16.4" fill="#ffffff" width="16.4" height="15"/>
+            <text class="st3">
+                <tspan y="56.7" x="16.3">-f</tspan>
+            </text>
+        </g>
+        <g transform="translate(665.11,206.97)">
+            <path id="shape25" fill="#41c3fa" stroke="#41c3fa" d="M161.2,53.8L161.2,0L0,0L0,53.8L161.2,53.8z"/>
+            <text class="st2">
+                <tspan y="30.4" x="50.1">frontend=1</tspan>
+            </text>
+        </g>
+        <g transform="translate(276.24,345.64)" id="shape26">
+            <path fill="none" stroke="#236ea1" d="M0,0L0,23.2"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#236ea1" stroke="#236ea1" d="M0,27.6L3,22.4C2.1,22.9,1.1,23.2,0,23.2C-1.1,23.2,-2.1,22.9,-3,22.4L0,27.6"/>
+        </g>
+        <g transform="translate(228.99,373.26)">
+            <path id="shape27" fill="#41c3fa" stroke="#41c3fa" d="M94.5,56.3L94.5,0L0,0L0,56.3L94.5,56.3z"/>
+            <text class="st2">
+                <tspan y="32.6" x="9.2">注册ctrlmode</tspan>
+            </text>
+        </g>
+        <g transform="translate(276.24,429.55)" id="shape28">
+            <path fill="none" stroke="#236ea1" d="M0,0L0,25.6"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#236ea1" stroke="#236ea1" d="M0,30L3,24.8C2.1,25.3,1.1,25.6,0,25.6C-1.1,25.6,-2.1,25.3,-3,24.8L0,30"/>
+        </g>
+        <g transform="translate(228.99,459.55)">
+            <path id="shape29" fill="#41c3fa" stroke="#41c3fa" d="M94.5,56.3L94.5,0L0,0L0,56.3L94.5,56.3z"/>
+            <text class="st2">
+                <tspan y="15.6" x="34.2">依据</tspan>
+                <tspan y="32.6" x="13.2">outputdev初</tspan>
+                <tspan y="49.6" x="15.2">始化轴输出</tspan>
+            </text>
+        </g>
+        <g transform="translate(323.48,487.7)" id="shape30">
+            <path fill="none" stroke="#236ea1" d="M0,0L50.5,0L50.5,-170.2L78.1,-170.2"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#236ea1" stroke="#236ea1" d="M82.5,-170.2L77.3,-173.2C77.8,-172.3,78.1,-171.3,78.1,-170.2C78.1,-169.1,77.8,-168.1,77.3,-167.2L82.5,-170.2"/>
+        </g>
+        <g transform="translate(406,289.35)">
+            <path id="shape31" fill="#41c3fa" stroke="#41c3fa" d="M100,56.3L100,0L0,0L0,56.3L100,56.3z"/>
+            <text class="st2">
+                <tspan y="31.6" x="11">applicationInit</tspan>
+            </text>
+        </g>
+        <g transform="translate(456,345.64)" id="shape32">
+            <path fill="none" stroke="#236ea1" d="M0,0L0,23.2"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#236ea1" stroke="#236ea1" d="M0,27.6L3,22.4C2.1,22.9,1.1,23.2,0,23.2C-1.1,23.2,-2.1,22.9,-3,22.4L0,27.6"/>
+        </g>
+        <g transform="translate(392,373.26)">
+            <path id="shape33" fill="#41c3fa" stroke="#41c3fa" d="M128,56.3L128,0L0,0L0,56.3L128,56.3z"/>
+            <text class="st2">
+                <tspan y="31.6" x="10">open_libencryption</tspan>
+            </text>
+        </g>
+        <g transform="translate(456,429.55)" id="shape34">
+            <path fill="none" stroke="#236ea1" d="M0,0L0,25.6"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#236ea1" stroke="#236ea1" d="M0,30L3,24.8C2.1,25.3,1.1,25.6,0,25.6C-1.1,25.6,-2.1,25.3,-3,24.8L0,30"/>
+        </g>
+        <g transform="translate(401.5,459.55)">
+            <path id="shape35" fill="#41c3fa" stroke="#41c3fa" d="M109,69.4L109,0L0,0L0,69.4L109,69.4z"/>
+            <text class="st2">
+                <tspan y="22.2" x="13">accept+thread</tspan>
+                <tspan y="39.2" x="9">模式循环接收来</tspan>
+                <tspan y="56.2" x="13">自client的连接</tspan>
+            </text>
+        </g>
+        <g transform="translate(95.91,360.91)" id="shape36">
+            <path fill="none" stroke="#064e66" d="M0,0L0,17.2"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#064e66" stroke="#064e66" d="M0,27.6L2.6,17.2L-2.6,17.2L0,27.6"/>
+            <text class="st2">
+                <tspan y="17.3" x="-15.5">pid>0</tspan>
+            </text>
+        </g>
+        <g transform="translate(373,115.92)">
+            <path id="shape37" fill="#41c3fa" stroke="#41c3fa" d="M94.5,56.3L94.5,0L0,0L0,56.3L94.5,56.3z"/>
+            <text class="st2">
+                <tspan y="24.1" x="8.2">处理命令行参</tspan>
+                <tspan y="41.1" x="41.2">数</tspan>
+            </text>
+        </g>
+        <g transform="translate(467.49,144.06)" id="shape38">
+            <path fill="none" stroke="#064e66" d="M0,0L25.1,0"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#064e66" stroke="#064e66" d="M35.5,0L25.1,-2.6L25.1,2.6L35.5,0"/>
+        </g>
+        <g transform="translate(395.53,559)">
+            <path id="shape39" fill="#41c3fa" stroke="#41c3fa" d="M24.5,49L96.5,49C110,49,120.9,38,120.9,24.5C120.9,11,110,0,96.5,0L24.5,0C11,0,0,11,0,24.5C0,38,11,49,24.5,49z"/>
+            <text class="st1">
+                <tspan y="28.5" x="44.5">exit()</tspan>
+            </text>
+        </g>
+        <g transform="translate(456,529)" id="shape40">
+            <path fill="none" stroke="#064e66" d="M0,0L0,19.6"/>
+            <path stroke-width="1" stroke-linecap="round" fill="#064e66" stroke="#064e66" d="M0,30L2.6,19.6L-2.6,19.6L0,30"/>
+        </g>
+    </g>
+</svg>

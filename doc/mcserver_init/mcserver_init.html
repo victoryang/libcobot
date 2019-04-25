@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>mcserver_init.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="mcserver-init-flow">Mcserver Init Flow</h1>
+<h2 id="mcserver-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%B5%81%E7%A8%8B">Mcserver 初始化流程</h2>
+<h3 id="0-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%B5%81%E7%A8%8B%E5%9B%BE">0 初始化流程图</h3>
+<image src="mcserver_init.svg">
+<br>
+<br>
+<br>
+<h3 id="1-%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E5%88%9D%E5%A7%8B%E5%8C%96">1 日志系统初始化</h3>
+<pre><code>Log写入/var/log/messages
+</code></pre>
+<br>
+<h3 id="2-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B">2 守护进程</h3>
+<pre><code>mcserver默认后台运行，启动时追加-f参数可以使其以前台模式启动
+</code></pre>
+<p>mcserver使用linux上常见的Double Fork方式创建守护进程</p>
+<ul>
+<li>创建pipe进行父子进程间的通信</li>
+<li>子进程成功进入daemon状态后，通过pipe发送已启动信息给父进程</li>
+<li>同时父进程以30s的超时时间来接收此信息，并依据结果退出</li>
+<li>子进程接管后续所有初始化流程</li>
+</ul>
+<br>
+<h3 id="3-%E7%B3%BB%E7%BB%9F%E5%88%9D%E5%A7%8B%E5%8C%96">3 系统初始化</h3>
+<ul>
+<li>模拟io初始化</li>
+<li>共享内存环境初始化</li>
+<li>crc校验初始化</li>
+<li>配置信息初始化</li>
+<li>parameters信息初始化</li>
+<li>nvram初始化</li>
+<li>注册中断信号</li>
+</ul>
+<br>
+<h3 id="4-%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0">4 处理命令行参数</h3>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>-a</td>
+<td>模拟IO设置</td>
+</tr>
+<tr>
+<td>2</td>
+<td>-c</td>
+<td>配置文件选项</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-d</td>
+<td>Debug模式</td>
+</tr>
+<tr>
+<td>4</td>
+<td>-e</td>
+<td>控制模式设置</td>
+</tr>
+<tr>
+<td>5</td>
+<td>-f</td>
+<td>运行模式</td>
+</tr>
+<tr>
+<td>6</td>
+<td>-h</td>
+<td>打印列表</td>
+</tr>
+<tr>
+<td>7</td>
+<td>-i</td>
+<td>运动学相关设置</td>
+</tr>
+<tr>
+<td>8</td>
+<td>-o</td>
+<td>输出设备相关设置</td>
+</tr>
+<tr>
+<td>9</td>
+<td>-p</td>
+<td>监听端口选项</td>
+</tr>
+<tr>
+<td>10</td>
+<td>-n</td>
+<td>nvram设备</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3 id="5-%E5%88%9B%E5%BB%BAsocket%E7%BD%91%E7%BB%9C%E7%9B%91%E5%90%AC">5 创建socket网络监听</h3>
+<pre><code>默认监听端口8055，可通过-p选项更改
+</code></pre>
+<br>
+<h3 id="6-%E6%B3%A8%E5%86%8C%E6%8E%A7%E5%88%B6%E6%A8%A1%E5%BC%8F">6 注册控制模式</h3>
+<pre><code>将控制模式写入共享内存
+</code></pre>
+<br>
+<h3 id="7-%E4%B8%9A%E5%8A%A1%E5%88%9D%E5%A7%8B%E5%8C%96">7 业务初始化</h3>
+<table>
+<thead>
+<tr>
+<th>业务归属</th>
+<th>业务名称</th>
+<th>业务类型</th>
+<th>plugin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>robot</td>
+<td>ExtAxis</td>
+<td>外部轴</td>
+<td>否</td>
+</tr>
+<tr>
+<td>robot</td>
+<td>robotresource</td>
+<td>共享内存数据</td>
+<td>否</td>
+</tr>
+<tr>
+<td>robot</td>
+<td>instruction_exec</td>
+<td>程序执行</td>
+<td>否</td>
+</tr>
+<tr>
+<td>robot</td>
+<td>interpolation</td>
+<td>插补</td>
+<td>否</td>
+</tr>
+<tr>
+<td>ext_device</td>
+<td>keyence</td>
+<td>keyence</td>
+<td>否</td>
+</tr>
+<tr>
+<td>ext_device</td>
+<td>robotiq</td>
+<td>robotiq</td>
+<td>librobotiq.so</td>
+</tr>
+<tr>
+<td>robot</td>
+<td>manual</td>
+<td>手动插补</td>
+<td>否</td>
+</tr>
+<tr>
+<td>robot</td>
+<td>axis_output_later</td>
+<td>轴输出</td>
+<td>rbtfpga_pos.so <br> ethercat_pos.so</td>
+</tr>
+<tr>
+<td>robot</td>
+<td>check_thread</td>
+<td>执行</td>
+<td></td>
+</tr>
+<tr>
+<td>robot</td>
+<td>userdata</td>
+<td>用户数据</td>
+<td>libuserframe.so</td>
+</tr>
+<tr>
+<td>robot</td>
+<td>tooldata</td>
+<td>工具数据</td>
+<td>libautoset_tool.so</td>
+</tr>
+<tr>
+<td>robot</td>
+<td>interference</td>
+<td>干扰区</td>
+<td></td>
+</tr>
+<tr>
+<td>robot</td>
+<td>trackdata</td>
+<td>跟踪数据</td>
+<td></td>
+</tr>
+<tr>
+<td>robot</td>
+<td>visiondata</td>
+<td>视觉数据</td>
+<td></td>
+</tr>
+<tr>
+<td>robot</td>
+<td>lasertrackdata</td>
+<td>激光跟踪</td>
+<td></td>
+</tr>
+<tr>
+<td>robot</td>
+<td>bookprog_data</td>
+<td>预定程序</td>
+<td></td>
+</tr>
+<tr>
+<td>/</td>
+<td>remote_server</td>
+<td>远程模式</td>
+<td></td>
+</tr>
+<tr>
+<td>/</td>
+<td>udp</td>
+<td></td>
+<td>libudpcomm.so</td>
+</tr>
+<tr>
+<td>/</td>
+<td>iobus</td>
+<td></td>
+<td>libiobus.so</td>
+</tr>
+<tr>
+<td>/</td>
+<td>technic</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>/</td>
+<td>plc_socket</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ext_device</td>
+<td>setup_script_data</td>
+<td>安装脚本</td>
+<td></td>
+</tr>
+<tr>
+<td>/</td>
+<td>pallet</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3 id="8-%E5%8A%A0%E5%AF%86%E4%B8%9A%E5%8A%A1">8 加密业务</h3>
+<table>
+<thead>
+<tr>
+<th>业务归属</th>
+<th>业务名称</th>
+<th>业务类型</th>
+<th>plugin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>encryption</td>
+<td>加密</td>
+<td>libfilereadwrite.so</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3 id="9-%E5%90%AF%E5%8A%A8socket%E5%BE%AA%E7%8E%AF%E7%9B%91%E5%90%AC">9 启动socket循环监听</h3>
+<pre><code>Socket网络服务采用多线程模型，即为每次socket连接创建单独线程进行处理</code></pre>
+
+</body>
+</html>
