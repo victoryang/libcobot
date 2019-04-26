@@ -29,3 +29,5 @@ Linux系统默认会安装相关工具，安装包为automake
 
 ## 2 编译
     make
+
+## 3 Generate para_define
