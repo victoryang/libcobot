@@ -21,13 +21,25 @@ Linux系统默认会安装相关工具，安装包为automake
     6 执行autoconf，生成configure
     7 make
 
-### 1 交叉编译环境设置
+## 1 交叉编译环境设置
 - 将linda编译环境解压到/opt下
 - 执行 . /opt/linda/0.2/environment-setup-cortexa9hf-vfp-neon-linda-linux-gnueabi
 - ./build-yocto.sh
 - 将所有依赖的动态库放在src/plugin下
 
-## 2 编译
+## 2 编译方法
+    ./autogen.sh
+    ./build_yocto.sh
     make
 
-## 3 Generate para_define
+## 3 Makefile.am解析
+### 3.1 主目录Makefile.am
+
+    1. 通过配置para_define.in，调节项目的编译
+    - 扫描para_define.in，提取变量信息，结合include/para_define.h.in，生成include/para_define.h
+    - 扫描para_define.in，提取变量取值等信息，结合src/share/para_define.c.in，生成src/share/para_define.c
+
+    2. 依据Git信息，生成version.h
+
+### 3.2 分目录Makefile.am
+    控制分目录编译
